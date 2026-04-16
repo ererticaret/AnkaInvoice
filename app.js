@@ -18,3 +18,9 @@ function generateInvoice() {
 
   document.getElementById("invoiceOutput").innerHTML = invoiceHTML;
 }
+
+// 🔥 YENİ EKLENEN
+function startApp() {
+  document.querySelector(".hero").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}
