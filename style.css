@@ -34,3 +34,24 @@ button {
   padding: 10px;
   background: #eee;
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: black;
+  color: white;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.hero h2 {
+  font-size: 40px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 15px 30px;
+}
