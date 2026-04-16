@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Invoice App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Invoice Generator</h1>
+
+    <input type="text" id="clientName" placeholder="Client Name">
+    <input type="text" id="service" placeholder="Service">
+    <input type="number" id="amount" placeholder="Amount (€)">
+
+    <button onclick="generateInvoice()">Create Invoice</button>
+
+    <div id="invoiceOutput"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
