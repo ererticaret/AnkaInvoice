@@ -1,57 +1,40 @@
-body {
-  font-family: Arial;
-  background: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AnkaInvoice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+  <!-- HEADER -->
+  <header class="header">
+    <h1>AnkaInvoice</h1>
+    <button onclick="startApp()">Get Started</button>
+  </header>
 
-input {
-  width: 100%;
-  margin: 5px 0;
-  padding: 10px;
-}
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Create invoices in seconds</h2>
+    <p>No complexity. No accounting skills needed. Just get paid.</p>
+    <button onclick="startApp()">Start Now</button>
+  </section>
 
-button {
-  width: 100%;
-  padding: 10px;
-  background: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+  <!-- APP -->
+  <section id="app" class="hidden">
+    <div class="container">
+      <h2>Invoice Generator</h2>
 
-#invoiceOutput {
-  margin-top: 20px;
-  padding: 10px;
-  background: #eee;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background: black;
-  color: white;
-}
+      <input type="text" id="clientName" placeholder="Client Name">
+      <input type="text" id="service" placeholder="Service">
+      <input type="number" id="amount" placeholder="Amount (€)">
 
-.hero {
-  text-align: center;
-  margin-top: 100px;
-}
+      <button onclick="generateInvoice()">Create Invoice</button>
 
-.hero h2 {
-  font-size: 40px;
-}
+      <div id="invoiceOutput"></div>
+    </div>
+  </section>
 
-.hero button {
-  margin-top: 20px;
-  padding: 15px 30px;
-}
+  <script src="app.js"></script>
+</body>
+</html>
