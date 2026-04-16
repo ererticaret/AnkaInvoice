@@ -13,13 +13,30 @@ function generateInvoice() {
     return;
   }
 
-  const invoiceHTML = `
-    <h3>Invoice</h3>
-    <p><strong>Client:</strong> ${client}</p>
-    <p><strong>Service:</strong> ${service}</p>
-    <p><strong>Amount:</strong> €${amount}</p>
-    <p>Status: Unpaid</p>
+  const invoiceText = `
+Invoice
+
+Client: ${client}
+Service: ${service}
+Amount: €${amount}
+Status: Unpaid
   `;
 
-  document.getElementById("invoiceOutput").innerHTML = invoiceHTML;
+  document.getElementById("invoiceOutput").innerText = invoiceText;
+}
+
+function downloadInvoice() {
+  const content = document.getElementById("invoiceOutput").innerText;
+
+  if (!content) {
+    alert("Create invoice first");
+    return;
+  }
+
+  const blob = new Blob([content], { type: "text/plain" });
+  const link = document.createElement("a");
+
+  link.href = URL.createObjectURL(blob);
+  link.download = "invoice.txt";
+  link.click();
 }
