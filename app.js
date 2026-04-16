@@ -1,8 +1,3 @@
-function startApp() {
-  document.querySelector(".hero").style.display = "none";
-  document.getElementById("app").classList.remove("hidden");
-}
-
 function generateInvoice() {
   const client = document.getElementById("clientName").value;
   const service = document.getElementById("service").value;
@@ -13,30 +8,21 @@ function generateInvoice() {
     return;
   }
 
+  const date = new Date().toLocaleDateString();
+  const invoiceNumber = Math.floor(Math.random() * 100000);
+
   const invoiceText = `
-Invoice
+INVOICE
+
+Invoice No: ${invoiceNumber}
+Date: ${date}
 
 Client: ${client}
 Service: ${service}
 Amount: €${amount}
+
 Status: Unpaid
   `;
 
   document.getElementById("invoiceOutput").innerText = invoiceText;
-}
-
-function downloadInvoice() {
-  const content = document.getElementById("invoiceOutput").innerText;
-
-  if (!content) {
-    alert("Create invoice first");
-    return;
-  }
-
-  const blob = new Blob([content], { type: "text/plain" });
-  const link = document.createElement("a");
-
-  link.href = URL.createObjectURL(blob);
-  link.download = "invoice.txt";
-  link.click();
 }
