@@ -42,9 +42,21 @@ input {
 }
 
 button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background: black;
+  color: white;
+  border: none;
   cursor: pointer;
 }
 
 .hidden {
   display: none;
+}
+
+#invoiceOutput {
+  margin-top: 20px;
+  padding: 10px;
+  background: #eee;
 }
