@@ -2,22 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Invoice App</title>
+  <title>AnkaInvoice</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>Invoice Generator</h1>
+  <header class="header">
+    <h1>AnkaInvoice</h1>
+    <button onclick="startApp()">Get Started</button>
+  </header>
 
-    <input type="text" id="clientName" placeholder="Client Name">
-    <input type="text" id="service" placeholder="Service">
-    <input type="number" id="amount" placeholder="Amount (€)">
+  <section class="hero">
+    <h2>Create invoices in seconds</h2>
+    <p>No complexity. No accounting skills needed. Just get paid.</p>
+    <button onclick="startApp()">Start Now</button>
+  </section>
 
-    <button onclick="generateInvoice()">Create Invoice</button>
+  <section id="app" style="display:none;">
+    <div class="container">
+      <h2>Invoice Generator</h2>
 
-    <div id="invoiceOutput"></div>
-  </div>
+      <input type="text" id="clientName" placeholder="Client Name">
+      <input type="text" id="service" placeholder="Service">
+      <input type="number" id="amount" placeholder="Amount (€)">
+
+      <button onclick="generateInvoice()">Create Invoice</button>
+
+      <div id="invoiceOutput"></div>
+    </div>
+  </section>
 
   <script src="app.js"></script>
 </body>
