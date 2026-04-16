@@ -1,3 +1,8 @@
+function startApp() {
+  document.querySelector(".hero").style.display = "none";
+  document.getElementById("app").classList.remove("hidden");
+}
+
 function generateInvoice() {
   const client = document.getElementById("clientName").value;
   const service = document.getElementById("service").value;
@@ -17,10 +22,4 @@ function generateInvoice() {
   `;
 
   document.getElementById("invoiceOutput").innerHTML = invoiceHTML;
-}
-
-// 🔥 YENİ EKLENEN
-function startApp() {
-  document.querySelector(".hero").style.display = "none";
-  document.getElementById("app").style.display = "block";
 }
