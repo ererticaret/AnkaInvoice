@@ -3,84 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>AnkaInvoice</title>
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      background: #f5f5f5;
-    }
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px;
-      background: black;
-      color: white;
-    }
+  <!-- PDF LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    .hero {
-      text-align: center;
-      margin-top: 100px;
-    }
-
-    .hero h2 {
-      font-size: 40px;
-    }
-
-    .hero button {
-      margin-top: 20px;
-      padding: 15px 30px;
-    }
-
-    .container {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      margin: 50px auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    input {
-      width: 100%;
-      margin: 5px 0;
-      padding: 10px;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      background: black;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    #invoiceOutput {
-      margin-top: 20px;
-      padding: 10px;
-      background: #eee;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="header">
     <h1>AnkaInvoice</h1>
     <button onclick="startApp()">Get Started</button>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <h2>Create invoices in seconds</h2>
     <p>No complexity. No accounting skills needed. Just get paid.</p>
     <button onclick="startApp()">Start Now</button>
   </section>
 
+  <!-- APP -->
   <section id="app" class="hidden">
     <div class="container">
       <h2>Invoice Generator</h2>
@@ -90,56 +34,12 @@
       <input type="number" id="amount" placeholder="Amount (€)">
 
       <button onclick="generateInvoice()">Create Invoice</button>
-      <button onclick="downloadInvoice()">Download Invoice</button>
+      <button onclick="downloadInvoice()">Download PDF</button>
 
       <div id="invoiceOutput"></div>
     </div>
   </section>
 
-  <script>
-    function startApp() {
-      document.querySelector(".hero").style.display = "none";
-      document.getElementById("app").classList.remove("hidden");
-    }
-
-    function generateInvoice() {
-      const client = document.getElementById("clientName").value;
-      const service = document.getElementById("service").value;
-      const amount = document.getElementById("amount").value;
-
-      if (!client || !service || !amount) {
-        alert("Please fill all fields");
-        return;
-      }
-
-      const invoiceText = `
-Invoice
-
-Client: ${client}
-Service: ${service}
-Amount: €${amount}
-Status: Unpaid
-      `;
-
-      document.getElementById("invoiceOutput").innerText = invoiceText;
-    }
-
-    function downloadInvoice() {
-      const content = document.getElementById("invoiceOutput").innerText;
-
-      if (!content) {
-        alert("Create invoice first");
-        return;
-      }
-
-      const blob = new Blob([content], { type: "text/plain" });
-      const link = document.createElement("a");
-
-      link.href = URL.createObjectURL(blob);
-      link.download = "invoice.txt";
-      link.click();
-    }
-  </script>
-
+  <script src="app.js"></script>
 </body>
 </html>
