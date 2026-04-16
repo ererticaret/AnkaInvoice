@@ -7,20 +7,17 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <h1>AnkaInvoice</h1>
     <button onclick="startApp()">Get Started</button>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <h2>Create invoices in seconds</h2>
     <p>No complexity. No accounting skills needed. Just get paid.</p>
     <button onclick="startApp()">Start Now</button>
   </section>
 
-  <!-- APP -->
   <section id="app" class="hidden">
     <div class="container">
       <h2>Invoice Generator</h2>
@@ -30,6 +27,7 @@
       <input type="number" id="amount" placeholder="Amount (€)">
 
       <button onclick="generateInvoice()">Create Invoice</button>
+      <button onclick="downloadInvoice()">Download Invoice</button>
 
       <div id="invoiceOutput"></div>
     </div>
